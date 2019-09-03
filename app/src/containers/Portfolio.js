@@ -1,6 +1,10 @@
 import React from "react";
 import Header from "../components/Header";
-import { makeStyles, Paper } from "@material-ui/core";
+import BtnGroup from "../components/BtnGroup";
+import { makeStyles, Paper, Grid, Card } from "@material-ui/core";
+import { projBtns } from "../utils/variables";
+import projects from "../utils/projects";
+
 const useStyles = makeStyles({
   paper: {
     margin: 0,
@@ -17,6 +21,18 @@ const Portfolio = props => {
   return (
     <Paper className={classes.paper}>
       <Header name={"Portfolio"} />
+      <BtnGroup names={projBtns} />
+      <Grid container>
+        {projects.map(project => (
+          <Card key={project.id}>
+            <img
+              src={project.image}
+              alt="image"
+              style={{ width: 200, height: 200 }}
+            />
+          </Card>
+        ))}
+      </Grid>
     </Paper>
   );
 };

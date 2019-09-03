@@ -1,3 +1,13 @@
+import React from "react";
+import query from "../images/query.png";
+import react from "../images/react.png";
+import mobile from "../images/mobile.png";
+import rails from "../images/rails.png";
+import actioncable from "../images/actioncable.png";
+import blockchaintest from "../images/blockchaintest.png";
+import fullstack from "../images/fullstack.png";
+import next from "../images/next.jpg";
+
 const blogs = [
   {
     id: 1,
@@ -33,7 +43,7 @@ const blogs = [
   },
   {
     id: 5,
-    image: action,
+    image: actioncable,
     summary:
       "Nulla porttitor accumsan tincidunt.Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
     url:
@@ -63,3 +73,5 @@ const blogs = [
     url: ""
   }
 ];
+
+export default blogs;

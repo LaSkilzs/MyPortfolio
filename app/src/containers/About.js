@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "../components/Header";
-import { makeStyles, Paper } from "@material-ui/core";
+import Card from "../components/ Card";
+import Info from "../components/Info";
+import FootDash from "../components/FootDash";
+import { makeStyles, Paper, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles({
   paper: {
@@ -20,6 +23,11 @@ const About = props => {
   return (
     <Paper className={classes.paper}>
       <Header name={"About Me"} />
+      <Grid container>
+        <Card />
+        <Info />
+        <FootDash />
+      </Grid>
     </Paper>
   );
 };

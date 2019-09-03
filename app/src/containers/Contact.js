@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
-import { makeStyles, Paper } from "@material-ui/core";
+import Form from "../components/Form";
+import { makeStyles, Paper, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles({
   paper: {
@@ -18,6 +19,11 @@ const Contact = props => {
   return (
     <Paper className={classes.paper}>
       <Header name={"Contact Me"} />
+      <Grid container>
+        <Grid item md={12}>
+          <Form />
+        </Grid>
+      </Grid>
     </Paper>
   );
 };

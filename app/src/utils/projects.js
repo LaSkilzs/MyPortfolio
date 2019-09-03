@@ -1,4 +1,14 @@
-projects: [
+import React from "react";
+import doggie from "../images/doggie.png";
+import hair from "../images/hair.png";
+import jobs from "../images/jobs.png";
+import car from "../images/car.png";
+import assets from "../images/assets.png";
+import immersful from "../images/immersful.png";
+import social from "../images/social.png";
+import portfolio from "../images/portfolio.png";
+
+const projects = [
   {
     id: 1,
     title: "Sniff Scratch n' Shake",
@@ -107,10 +117,10 @@ projects: [
       start: "June 19, 2019",
       end: "June 22, 2019"
     },
-    image: immersful
+    image: "google"
   },
   {
-    id: 8,
+    id: 9,
     title: "Asset Management",
     language: "React Solidity Typescript Javascript Jest Material-UI Stock-Api",
     summary:
@@ -120,7 +130,7 @@ projects: [
       start: "July 19, 2019",
       end: "August 17, 2019"
     },
-    image: AssetMgmt
+    image: assets
   },
   {
     id: 10,
@@ -134,7 +144,7 @@ projects: [
       start: "Sept 1, 2019",
       end: "in progess"
     },
-    image: Casino
+    image: "casino"
   }
 ];
 

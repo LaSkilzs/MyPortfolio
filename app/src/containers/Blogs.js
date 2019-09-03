@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
-import { makeStyles, Paper } from "@material-ui/core";
+import { makeStyles, Paper, Card, CardContent, Grid } from "@material-ui/core";
+import blogs from "../utils/blogs";
 
 const useStyles = makeStyles({
   paper: {
@@ -13,11 +14,26 @@ const useStyles = makeStyles({
     backgroundAttachment: "fixed"
   }
 });
-const Blogs = () => {
+const Blogs = props => {
   const classes = useStyles();
   return (
     <Paper className={classes.paper}>
       <Header name={"Blogs"} />
+      <Grid container>
+        {blogs.map(blog => (
+          <Card key={blog.id}>
+            <img
+              src={blog.image}
+              alt="image"
+              style={{ width: 200, height: 200 }}
+            />
+            <CardContent>{blog.summary}</CardContent>
+            <CardContent>
+              <a href={blog.url}></a>
+            </CardContent>
+          </Card>
+        ))}
+      </Grid>
     </Paper>
   );
 };
