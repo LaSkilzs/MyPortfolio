@@ -7,6 +7,7 @@ import assets from "../images/assets.png";
 import immersful from "../images/immersful.png";
 import social from "../images/social.png";
 import portfolio from "../images/portfolio.png";
+import google from "../images/google.png";
 
 const projects = [
   {
@@ -117,7 +118,7 @@ const projects = [
       start: "June 19, 2019",
       end: "June 22, 2019"
     },
-    image: "google"
+    image: google
   },
   {
     id: 9,
@@ -131,20 +132,20 @@ const projects = [
       end: "August 17, 2019"
     },
     image: assets
-  },
-  {
-    id: 10,
-    title: "Casino",
-    language:
-      "React Typescript Javascript Jest Material-UI Sockets Express NodeJs MongoDB Firebase",
-    summary:
-      "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
-    author: "La Fountain",
-    goal: {
-      start: "Sept 1, 2019",
-      end: "in progess"
-    },
-    image: "casino"
+    // },
+    // {
+    //   id: 10,
+    //   title: "Casino",
+    //   language:
+    //     "React Typescript Javascript Jest Material-UI Sockets Express NodeJs MongoDB Firebase",
+    //   summary:
+    //     "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
+    //   author: "La Fountain",
+    //   goal: {
+    //     start: "Sept 1, 2019",
+    //     end: "in progess"
+    //   },
+    //   image: "casino"
   }
 ];
 

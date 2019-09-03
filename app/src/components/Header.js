@@ -2,10 +2,12 @@ import React from "react";
 import { Typography, Divider, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles({
   header: {
-    textAlign: "center"
+    textAlign: "center",
+    color: "white"
   },
   divider: {
-    margin: "0 auto"
+    margin: "0 auto",
+    color: "white"
   }
 });
 

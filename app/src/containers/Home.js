@@ -1,12 +1,13 @@
 import React from "react";
 import { Paper, Button, makeStyles } from "@material-ui/core";
+import clouds from "../images/clouds.jpg";
 
 const useStyles = makeStyles({
   paper: {
     margin: 0,
     height: "105vh",
     width: "105vw",
-    backgroundImage: `url(https://images.pexels.com/photos/1807085/pexels-photo-1807085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`,
+    backgroundImage: `url(https://cdn.pixabay.com/photo/2019/05/22/20/38/lavender-4222480_1280.jpg)`,
     backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -21,7 +22,6 @@ const useStyles = makeStyles({
     fontFamily: "Slabo 27px serif",
     background: "transparent",
     width: "30%",
-    marginBottom: "20rem",
     border: "white 2px solid",
     margin: "0 auto"
   }
@@ -33,9 +33,9 @@ const Home = () => {
 
   return (
     <Paper className={classes.paper}>
-      <Button className={classes.btn} color="primary">
+      {/* <Button className={classes.btn} color="primary">
         View Work
-      </Button>
+      </Button> */}
     </Paper>
   );
 };

@@ -14,24 +14,37 @@ const useStyles = makeStyles({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundAttachment: "fixed"
+  },
+  grid: {
+    display: "flex",
+    justifyContent: "center",
+    width: "80vw",
+    marginLeft: "5rem",
+    height: "10vh",
+    padding: "2rem"
+  },
+  img: {
+    width: "24vw",
+    height: "20vh",
+    padding: "0.5rem"
   }
 });
+
 const Portfolio = props => {
   const classes = useStyles();
+
   return (
     <Paper className={classes.paper}>
       <Header name={"Portfolio"} />
       <BtnGroup names={projBtns} />
-      <Grid container>
-        {projects.map(project => (
-          <Card key={project.id}>
-            <img
-              src={project.image}
-              alt="image"
-              style={{ width: 200, height: 200 }}
-            />
-          </Card>
-        ))}
+      <Grid container className={classes.grid}>
+        {projects.map(project => {
+          return (
+            <Grid item md={4} key={project.id}>
+              <img src={project.image} alt="image" className={classes.img} />
+            </Grid>
+          );
+        })}
       </Grid>
     </Paper>
   );

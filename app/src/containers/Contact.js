@@ -12,6 +12,9 @@ const useStyles = makeStyles({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundAttachment: "fixed"
+  },
+  container: {
+    marginTop: "5rem"
   }
 });
 const Contact = props => {
@@ -19,7 +22,7 @@ const Contact = props => {
   return (
     <Paper className={classes.paper}>
       <Header name={"Contact Me"} />
-      <Grid container>
+      <Grid container className={classes.container}>
         <Grid item md={12}>
           <Form />
         </Grid>

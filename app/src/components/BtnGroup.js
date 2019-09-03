@@ -8,7 +8,11 @@ const useStyles = makeStyles({
   },
   btn: {
     padding: "1rem",
-    margin: "1rem"
+    margin: "1rem",
+    border: " 3px white solid",
+    width: "10vw",
+    color: "white",
+    fontSize: ".8rem"
   }
 });
 

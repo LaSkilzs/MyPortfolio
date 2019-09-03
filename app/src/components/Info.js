@@ -10,8 +10,16 @@ class Info extends Component {
   }
   render() {
     return (
-      <Grid item md={8}>
-        <Typography>
+      <Grid
+        item
+        md={8}
+        style={{
+          margin: "auto",
+          padding: "5rem",
+          height: "20rem"
+        }}
+      >
+        <Typography style={{ fontSize: "1rem", color: "white" }}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
           praesentium recusandae ex deserunt qui? Facere facilis est incidunt
           quia harum, itaque minus possimus nam. Nobis excepturi ab voluptatum

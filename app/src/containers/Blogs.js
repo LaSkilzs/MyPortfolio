@@ -12,6 +12,26 @@ const useStyles = makeStyles({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundAttachment: "fixed"
+  },
+  grid: {
+    display: "flex",
+    justifyContent: "center",
+    width: "80vw",
+    marginLeft: "5rem",
+    height: "10vh",
+    padding: "2rem"
+  },
+  wrapper: {
+    border: "4px solid white",
+    padding: "1rem",
+    margin: "auto",
+    textAlign: "center",
+    margin: "1rem",
+    width: "19vw"
+  },
+  img: {
+    width: "19vw",
+    height: "23vh"
   }
 });
 const Blogs = props => {
@@ -19,19 +39,16 @@ const Blogs = props => {
   return (
     <Paper className={classes.paper}>
       <Header name={"Blogs"} />
-      <Grid container>
+      <Grid container className={classes.grid}>
         {blogs.map(blog => (
-          <Card key={blog.id}>
-            <img
-              src={blog.image}
-              alt="image"
-              style={{ width: 200, height: 200 }}
-            />
-            <CardContent>{blog.summary}</CardContent>
-            <CardContent>
-              <a href={blog.url}></a>
-            </CardContent>
-          </Card>
+          <Grid item md={4} key={blog.id}>
+            <div className={classes.wrapper}>
+              <img src={blog.image} alt="image" className={classes.img} />
+              <p>{blog.summary}</p>
+
+              <a href={blog.url}>read more</a>
+            </div>
+          </Grid>
         ))}
       </Grid>
     </Paper>
