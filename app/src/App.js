@@ -1,24 +1,24 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
-import background from "./images/clouds.jpg";
+import routes from "./Routes";
+import SideNav from "./components/SideNav";
+import { Route, Switch } from "react-router-dom";
 
-function App() {
-  console.log(background);
+const App = () => {
   return (
-    <Paper>
-      <Typography variant="h1" component="h2">
-        La Fountain
-      </Typography>
-      <Typography variant="h3" component="h3">
-        Creator
-      </Typography>
-      <Button variant="contained" color="secondary">
-        View My Work
-      </Button>
-    </Paper>
+    <React.Fragment>
+      <SideNav />
+      <Switch>
+        {routes.map(({ path, exact, component: C, ...rest }) => (
+          <Route
+            key={path}
+            path={path}
+            exact={exact}
+            render={routerProps => <C {...routerProps} {...rest} />}
+          />
+        ))}
+      </Switch>
+    </React.Fragment>
   );
-}
+};
 
 export default App;
