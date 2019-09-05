@@ -10,53 +10,61 @@ class Blogs extends React.Component {
     super(props);
     this.state = {
       start: 0,
-      blogs: blogs,
-      show: []
+      blogs: blogs
     };
   }
 
-  componentDidMount() {}
-
-  handleClick = () => {
-    if (this.state.start < this.state.show.length) {
+  handleRight = () => {
+    console.log("right", this.state.start);
+    if (this.state.start < this.state.blogs.length - 2) {
       this.setState({ start: this.state.start + 1 });
     } else {
       this.setState({ start: 0 });
     }
   };
+  handleLeft = () => {
+    if (this.state.start < this.state.blogs.length && this.state.start !== 0) {
+      this.setState({ start: this.state.start - 1 });
+    } else {
+      this.setState({ start: this.state.blogs.length - 1 });
+    }
+  };
 
   render() {
-    let showBlog = num => this.state.blogs[num];
-    console.log(showBlog);
+    let num = this.state.start;
     const { classes } = this.props;
     return (
       <Paper className={classes.paper}>
         <Header name={"Blogs"} />
         <Grid container className={classes.grid}>
           <div className={classes.chev}>
-            <i className="fas fa-chevron-left" style={{ color: "white" }}></i>
+            <i
+              className="fas fa-chevron-left"
+              style={{ color: "white" }}
+              onClick={() => this.handleLeft()}
+            ></i>
           </div>
-
-          {/* {this.state.blogs.map(blog => ( */}
-          <Grid item md={4} key={showBlog(0).id}>
+          <Grid item md={4} key={this.state.blogs[num].id}>
             <Card className={classes.wrapper}>
               <img
-                src={showBlog(0).image}
+                src={this.state.blogs[num].image}
                 alt="blogs"
                 className={classes.img}
               />
-              <p>{showBlog(0).summary}</p>
-
+              <p>{this.state.blogs[num].summary}</p>
               <Button className={classes.button}>
-                <a className={classes.a} href={showBlog(0).url}>
+                <a className={classes.a} href={this.state.blogs[num].url}>
                   read more
                 </a>
               </Button>
             </Card>
           </Grid>
-          {/* ))} */}
           <div className={classes.chev}>
-            <i className="fas fa-chevron-right" style={{ color: "white" }}></i>
+            <i
+              className="fas fa-chevron-right"
+              style={{ color: "white" }}
+              onClick={() => this.handleRight()}
+            ></i>
           </div>
         </Grid>
       </Paper>

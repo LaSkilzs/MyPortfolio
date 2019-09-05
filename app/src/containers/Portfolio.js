@@ -7,6 +7,8 @@ import projects from "../utils/projects";
 import styles from "../assets/aboutStyles";
 import { withStyles } from "@material-ui/core/styles";
 import { languageIncluded } from "../utils/functions";
+import Front from "../components/project/Front";
+import Back from "../components/project/Back";
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -25,13 +27,32 @@ class Portfolio extends React.Component {
       newProjects = projects.filter(project =>
         languageIncluded(category, project.language)
       );
-
     this.setState({ projects: newProjects });
   };
 
-  handleImage = () => console.log("well");
+  handleImage = id => {
+    let newProjects = [...this.state.projects];
+    newProjects.map(project => {
+      if (project.id === id) {
+        project["back"] = !project["back"];
+      }
+    });
+    this.setState({ projects: newProjects });
+  };
 
-  handleBack = () => console.log();
+  filtered = () => {
+    return this.state.projects.map((project, idx) => {
+      if (project.back)
+        return (
+          <Back key={idx} handleImage={this.handleImage} project={project} />
+        );
+      else
+        return (
+          <Front key={idx} handleImage={this.handleImage} project={project} />
+        );
+    });
+  };
+
   render() {
     const { classes } = this.props;
 
@@ -40,49 +61,7 @@ class Portfolio extends React.Component {
         <Header name={"Portfolio"} />
         <BtnGroup names={projBtns} handleClick={this.handleClick} />
         <Grid container className={classes.grid}>
-          {this.state.projects.map(project => {
-            if (this.state.back) {
-              return (
-                <Grid
-                  item
-                  md={4}
-                  key={project.id}
-                  onClick={() => this.handleImage(project.id)}
-                >
-                  <p className={classes.p}>Skills: {project.language}</p>
-                  <p className={classes.summary}>Summary: {project.summary}</p>
-                  <p className={classes.contact}>
-                    <span className={classes.span}>
-                      {project.links["github"]}
-                    </span>
-                    <span className={classes.span}>
-                      {project.links["youtube"]}
-                    </span>
-                    <span className={classes.span}>
-                      {project.links["deployed"]}
-                    </span>
-                  </p>
-                </Grid>
-              );
-            } else {
-              return (
-                <Grid item md={4} key={project.id}>
-                  <img
-                    src={project.image}
-                    alt="projects"
-                    className={classes.img}
-                    onClick={this.handleImage}
-                  />
-                  <p
-                    onClick={() => this.handleImage(project.id)}
-                    className={classes.p}
-                  >
-                    {project.title}
-                  </p>
-                </Grid>
-              );
-            }
-          })}
+          {this.filtered()}
         </Grid>
       </Paper>
     );

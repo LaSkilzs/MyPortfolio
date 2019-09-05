@@ -19,8 +19,6 @@ export const languageIncluded = (array1, array2) => {
   array1 = array1.split("/");
   array2 = array2.toLowerCase().split(" ");
 
-  // console.log("btns", array1);
-  // console.log("list", array2);
   let newObject = {};
   let result = false;
 
@@ -30,9 +28,9 @@ export const languageIncluded = (array1, array2) => {
 
   for (let i = 0; i < array1.length; i++) {
     if (newObject[array1[i]]) {
+      result = true;
       break;
     }
-    result = true;
   }
   return result;
 };

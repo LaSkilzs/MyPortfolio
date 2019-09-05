@@ -4,7 +4,8 @@ import { makeStyles, Button } from "@material-ui/core";
 const useStyles = makeStyles({
   root: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+    marginTop: "1rem"
   },
   btn: {
     padding: "1rem",

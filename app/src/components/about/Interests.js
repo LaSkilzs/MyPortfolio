@@ -1,91 +1,83 @@
 import React, { Component } from "react";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, List, ListItem } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import interestStyles from "../../assets/interestStyles";
+import interests from "../../utils/interests";
+import MobileStepper from "../DotMobileStepper";
 
 class Interests extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      interests: {}
+      interests: interests,
+      showHobby: false
     };
   }
+
+  interestList = () => {
+    return this.state.interests.filter(
+      interest => interest.type === "interest"
+    );
+  };
+  hobbyList = () =>
+    this.state.interests.filter(interest => interest.type === "hobby");
+
+  handleLeft = () => this.setState({ showHobby: !this.state.showHobby });
+  handleRight = () => this.setState({ showHobby: !this.state.showHobby });
+
   render() {
+    console.log(this.state.showHobby);
+    let { classes } = this.props;
     return (
-      <Grid
-        item
-        md={8}
-        style={{
-          margin: "auto",
-          padding: "5rem",
-          height: "20rem"
-        }}
-      >
-        <Typography style={{ fontSize: "1rem", color: "white" }}>
-          My interests are requested..
-        </Typography>
-        <div className="interest">
-          <ol className="skills-list">
-            <li className="item-list double">
-              <i className="fab fa-bitcoin" />
-              <h3>Blockstack/DAPP</h3>
-            </li>
-            <li className="item-list">
-              <i className="fas fa-network-wired" />
-              <h3>Systems Engineer</h3>
-            </li>
-            <li className="item-list">
-              <i className="fab fa-aws" />
-              <h3>AWS</h3>
-            </li>
-            <li className="item-list">
-              <i className="fas fa-briefcase" />
-              <h3>Entreprenuer</h3>
-            </li>
-          </ol>
-          <div className="area-interest">
-            <h5>Areas of interests</h5>
-            <ol>
-              <li>Aging out Youth</li>
-              <li>Data Privacy</li>
-              <li>Data Solutions</li>
-              <li>Small Business Development</li>
-              <li>Systems Architecture</li>
-            </ol>
-            <div className="hobby">
-              <ol className="skills-list">
-                <li className="item-list double">
-                  <i className="fas fa-campground" />
-                  <h3>Outdoor Activities</h3>
-                </li>
-                <li className="item-list">
-                  <i className="fas fa-history" />
-                  <h3>Enjoy History</h3>
-                </li>
-                <li className="item-list">
-                  <i className="fas fa-paw" />
-                  <h3>Pet Lover</h3>
-                </li>
-                <li className="item-list">
-                  <i className="fas fa-running" />
-                  <h3>Working Out</h3>
-                </li>
-              </ol>
-              <div className="area-hobby">
-                <h2>My Hobbies</h2>
-                <p>
-                  I like to consider myself very diverse in my hobbies. I am
-                  avivd sports enthusiam, having recieve a full athletic
-                  scholarship, and winning the MSG Golden Gloves Tournament. In
-                  addition, I enjoy being outdoors, hiking,skiing, canoeing and
-                  much more. Strategic board games, reading about history are a
-                  few things that I enjoy.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <Grid item md={8} className={classes.container}>
+        {this.state.showHobby ? (
+          <React.Fragment>
+            <Typography variant="h4">Hobbies</Typography>
+            <Typography className={classes.paragraph}>
+              I like to consider myself very diverse in my hobbies. I am avivd
+              sports enthusiam, having recieve a full athletic scholarship, and
+              winning the MSG Golden Gloves Tournament. In addition, I enjoy
+              being outdoors, hiking,skiing, canoeing and much more. Strategic
+              board games, reading about history are a few things that I enjoy.
+            </Typography>
+            <List className={classes.list}>
+              {this.hobbyList().map(interest => (
+                <Grid item md={2} key={interest.id}>
+                  <ListItem>{interest.icon}</ListItem>
+                  <ListItem>{interest.name}</ListItem>
+                </Grid>
+              ))}
+            </List>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <Typography variant="h4">Interests</Typography>
+            <Typography className={classes.paragraph}>
+              Techncially, I am interested in how things are connected that is
+              one of the reasons, I chose full stack development. Understanding
+              the power and challenges of inteconnectedness via technology. My
+              other interests involve full stack development and enterprise
+              software.
+            </Typography>
+            <List className={classes.list}>
+              {this.interestList().map(interest => (
+                <Grid item md={2} key={interest.id}>
+                  <ListItem>{interest.icon}</ListItem>
+                  <ListItem>{interest.name}</ListItem>
+                </Grid>
+              ))}
+            </List>
+          </React.Fragment>
+        )}
+
+        <MobileStepper
+          steps={1}
+          handleLeft={this.handleLeft}
+          handleRight={this.handleRight}
+        />
       </Grid>
     );
   }
 }
 
-export default Interests;
+export default withStyles(interestStyles)(Interests);

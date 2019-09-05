@@ -21,7 +21,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: doggie
+    image: doggie,
+    back: false
   },
   {
     id: 2,
@@ -35,7 +36,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: hair
+    image: hair,
+    back: false
   },
   {
     id: 3,
@@ -49,7 +51,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: jobs
+    image: jobs,
+    back: false
   },
   {
     id: 4,
@@ -63,7 +66,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: car
+    image: car,
+    back: false
   },
   {
     id: 5,
@@ -77,7 +81,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: social
+    image: social,
+    back: false
   },
   {
     id: 6,
@@ -91,7 +96,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: portfolio
+    image: portfolio,
+    back: false
   },
   {
     id: 7,
@@ -105,7 +111,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: immersful
+    image: immersful,
+    back: false
   },
   {
     id: 8,
@@ -119,7 +126,8 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: google
+    image: google,
+    back: false
   },
   {
     id: 9,
@@ -133,13 +141,14 @@ const projects = [
       deployed: "deployed",
       youtube: "youtube"
     },
-    image: assets
+    image: assets,
+    back: false
     // },
     // {
     //   id: 10,
     //   title: "Casino",
     //   language:
-    //     "React Typescript Javascript Jest Material-UI Sockets Express NodeJs MongoDB Firebase",
+    //     "React Typescript Javascript Material-UI Sockets Express Node MongoDB Firebase",
     //   summary:
     //     "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     //   author: "La Fountain",
@@ -148,7 +157,8 @@ const projects = [
     //   deployed: "deployed",
     //   youtube: "youtube"
     // },
-    //   image: "casino"
+    //   image: "casino",
+    // back: false
   }
 ];
 
