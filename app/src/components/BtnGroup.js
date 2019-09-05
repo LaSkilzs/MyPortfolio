@@ -17,13 +17,16 @@ const useStyles = makeStyles({
 });
 
 const BtnGroup = props => {
-  console.log(props);
   const classes = useStyles();
   return (
     <React.Fragment>
       <div className={classes.root}>
         {props.names.map((name, idx) => (
-          <Button key={idx} className={classes.btn}>
+          <Button
+            key={idx}
+            className={classes.btn}
+            onClick={() => props.handleClick(name)}
+          >
             {name}
           </Button>
         ))}

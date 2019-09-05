@@ -1,6 +1,5 @@
 import React from "react";
-import { Paper, Button, makeStyles } from "@material-ui/core";
-import clouds from "../images/clouds.jpg";
+import { Paper, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   paper: {
@@ -31,13 +30,7 @@ const Home = () => {
   const classes = useStyles();
   console.log("Hey");
 
-  return (
-    <Paper className={classes.paper}>
-      {/* <Button className={classes.btn} color="primary">
-        View Work
-      </Button> */}
-    </Paper>
-  );
+  return <Paper className={classes.paper}></Paper>;
 };
 
 export default Home;

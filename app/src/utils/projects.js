@@ -1,4 +1,3 @@
-import React from "react";
 import doggie from "../images/doggie.png";
 import hair from "../images/hair.png";
 import jobs from "../images/jobs.png";
@@ -17,10 +16,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: doggie
   },
@@ -31,10 +30,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: hair
   },
@@ -45,10 +44,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: jobs
   },
@@ -59,10 +58,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: car
   },
@@ -73,10 +72,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: social
   },
@@ -87,10 +86,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: portfolio
   },
@@ -101,9 +100,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "August 18, 2019",
-      end: "Still Working on Project"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: immersful
   },
@@ -114,9 +114,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "June 19, 2019",
-      end: "June 22, 2019"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: google
   },
@@ -127,9 +128,10 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "July 19, 2019",
-      end: "August 17, 2019"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
     image: assets
     // },
@@ -141,10 +143,11 @@ const projects = [
     //   summary:
     //     "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     //   author: "La Fountain",
-    //   goal: {
-    //     start: "Sept 1, 2019",
-    //     end: "in progess"
-    //   },
+    //   links: {
+    //     github: "github",
+    //   deployed: "deployed",
+    //   youtube: "youtube"
+    // },
     //   image: "casino"
   }
 ];

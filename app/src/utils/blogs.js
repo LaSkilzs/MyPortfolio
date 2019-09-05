@@ -1,4 +1,3 @@
-import React from "react";
 import query from "../images/query.png";
 import react from "../images/react.png";
 import mobile from "../images/mobile.png";
