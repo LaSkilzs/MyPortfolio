@@ -1,58 +1,75 @@
 import React from "react";
 import Header from "../components/Header";
-import { makeStyles, Paper, Card, CardContent, Grid } from "@material-ui/core";
+import { Paper, Card, Button, Grid } from "@material-ui/core";
 import blogs from "../utils/blogs";
+import { withStyles } from "@material-ui/core/styles";
+import blogStyles from "../assets/blogStyles";
 
-const useStyles = makeStyles({
-  paper: {
-    margin: 0,
-    marginLeft: "90px",
-    height: "56rem",
-    backgroundImage: `url("https://images.pexels.com/photos/971360/pexels-photo-971360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=1260")`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed"
-  },
-  grid: {
-    display: "flex",
-    justifyContent: "center",
-    width: "80vw",
-    marginLeft: "5rem",
-    height: "10vh",
-    padding: "2rem"
-  },
-  wrapper: {
-    border: "4px solid white",
-    padding: "1rem",
-    margin: "auto",
-    textAlign: "center",
-    margin: "1rem",
-    width: "19vw"
-  },
-  img: {
-    width: "19vw",
-    height: "23vh"
+class Blogs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      start: 0,
+      blogs: blogs
+    };
   }
-});
-const Blogs = props => {
-  const classes = useStyles();
-  return (
-    <Paper className={classes.paper}>
-      <Header name={"Blogs"} />
-      <Grid container className={classes.grid}>
-        {blogs.map(blog => (
-          <Grid item md={4} key={blog.id}>
-            <div className={classes.wrapper}>
-              <img src={blog.image} alt="image" className={classes.img} />
-              <p>{blog.summary}</p>
 
-              <a href={blog.url}>read more</a>
-            </div>
+  handleRight = () => {
+    console.log("right", this.state.start);
+    if (this.state.start < this.state.blogs.length - 2) {
+      this.setState({ start: this.state.start + 1 });
+    } else {
+      this.setState({ start: 0 });
+    }
+  };
+  handleLeft = () => {
+    if (this.state.start < this.state.blogs.length && this.state.start !== 0) {
+      this.setState({ start: this.state.start - 1 });
+    } else {
+      this.setState({ start: this.state.blogs.length - 1 });
+    }
+  };
+
+  render() {
+    let num = this.state.start;
+    const { classes } = this.props;
+    return (
+      <Paper className={classes.paper}>
+        <Header name={"Blogs"} />
+        <Grid container className={classes.grid}>
+          <div className={classes.chev}>
+            <i
+              className="fas fa-chevron-left"
+              style={{ color: "white" }}
+              onClick={() => this.handleLeft()}
+            ></i>
+          </div>
+          <Grid item md={4} key={this.state.blogs[num].id}>
+            <Card className={classes.wrapper}>
+              <img
+                src={this.state.blogs[num].image}
+                alt="blogs"
+                className={classes.img}
+              />
+              <p>{this.state.blogs[num].summary}</p>
+              <Button className={classes.button}>
+                <a className={classes.a} href={this.state.blogs[num].url}>
+                  read more
+                </a>
+              </Button>
+            </Card>
           </Grid>
-        ))}
-      </Grid>
-    </Paper>
-  );
-};
+          <div className={classes.chev}>
+            <i
+              className="fas fa-chevron-right"
+              style={{ color: "white" }}
+              onClick={() => this.handleRight()}
+            ></i>
+          </div>
+        </Grid>
+      </Paper>
+    );
+  }
+}
 
-export default Blogs;
+export default withStyles(blogStyles)(Blogs);

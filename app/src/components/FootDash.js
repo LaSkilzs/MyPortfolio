@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     color: "white"
   }
 });
-function FootDash(props) {
+const FootDash = props => {
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -29,10 +29,10 @@ function FootDash(props) {
         </div>
       </Grid>
       <Grid item md={8}>
-        <BtnGroup names={aboutBtns} />
+        <BtnGroup names={aboutBtns} handleClick={props.handleClick} />
       </Grid>
     </React.Fragment>
   );
-}
+};
 
 export default FootDash;

@@ -1,53 +1,71 @@
 import React from "react";
 import Header from "../components/Header";
 import BtnGroup from "../components/BtnGroup";
-import { makeStyles, Paper, Grid, Card } from "@material-ui/core";
+import { Paper, Grid } from "@material-ui/core";
 import { projBtns } from "../utils/variables";
 import projects from "../utils/projects";
+import styles from "../assets/aboutStyles";
+import { withStyles } from "@material-ui/core/styles";
+import { languageIncluded } from "../utils/functions";
+import Front from "../components/project/Front";
+import Back from "../components/project/Back";
 
-const useStyles = makeStyles({
-  paper: {
-    margin: 0,
-    marginLeft: "90px",
-    height: "56rem",
-    backgroundImage: `url("https://images.pexels.com/photos/971360/pexels-photo-971360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=1260")`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed"
-  },
-  grid: {
-    display: "flex",
-    justifyContent: "center",
-    width: "80vw",
-    marginLeft: "5rem",
-    height: "10vh",
-    padding: "2rem"
-  },
-  img: {
-    width: "24vw",
-    height: "20vh",
-    padding: "0.5rem"
+class Portfolio extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      projects: projects,
+      back: false
+    };
   }
-});
 
-const Portfolio = props => {
-  const classes = useStyles();
+  handleClick = category => {
+    let newProjects = [...projects];
+    if (category.toLowerCase() === "all")
+      this.setState({ projects: newProjects });
+    else
+      newProjects = projects.filter(project =>
+        languageIncluded(category, project.language)
+      );
+    this.setState({ projects: newProjects });
+  };
 
-  return (
-    <Paper className={classes.paper}>
-      <Header name={"Portfolio"} />
-      <BtnGroup names={projBtns} />
-      <Grid container className={classes.grid}>
-        {projects.map(project => {
-          return (
-            <Grid item md={4} key={project.id}>
-              <img src={project.image} alt="image" className={classes.img} />
-            </Grid>
-          );
-        })}
-      </Grid>
-    </Paper>
-  );
-};
+  handleImage = id => {
+    let newProjects = [...this.state.projects];
+    newProjects.map(project => {
+      if (project.id === id) {
+        project["back"] = !project["back"];
+      }
+    });
+    this.setState({ projects: newProjects });
+  };
 
-export default Portfolio;
+  filtered = () => {
+    return this.state.projects.map((project, idx) => {
+      if (project.back)
+        return (
+          <Back key={idx} handleImage={this.handleImage} project={project} />
+        );
+      else
+        return (
+          <Front key={idx} handleImage={this.handleImage} project={project} />
+        );
+    });
+  };
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <Paper className={classes.paper}>
+        <Header name={"Portfolio"} />
+        <BtnGroup names={projBtns} handleClick={this.handleClick} />
+        <Grid container className={classes.grid}>
+          {this.filtered()}
+        </Grid>
+      </Paper>
+    );
+  }
+}
+
+export default withStyles(styles)(Portfolio);

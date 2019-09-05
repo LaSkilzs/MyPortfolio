@@ -1,4 +1,3 @@
-import React from "react";
 import doggie from "../images/doggie.png";
 import hair from "../images/hair.png";
 import jobs from "../images/jobs.png";
@@ -17,12 +16,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: doggie
+    image: doggie,
+    back: false
   },
   {
     id: 2,
@@ -31,12 +31,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: hair
+    image: hair,
+    back: false
   },
   {
     id: 3,
@@ -45,12 +46,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: jobs
+    image: jobs,
+    back: false
   },
   {
     id: 4,
@@ -59,12 +61,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: car
+    image: car,
+    back: false
   },
   {
     id: 5,
@@ -73,12 +76,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: social
+    image: social,
+    back: false
   },
   {
     id: 6,
@@ -87,12 +91,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "date",
-      name: "name of goal",
-      estimated_time: "time to complete"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: portfolio
+    image: portfolio,
+    back: false
   },
   {
     id: 7,
@@ -101,11 +106,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "August 18, 2019",
-      end: "Still Working on Project"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: immersful
+    image: immersful,
+    back: false
   },
   {
     id: 8,
@@ -114,11 +121,13 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "June 19, 2019",
-      end: "June 22, 2019"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: google
+    image: google,
+    back: false
   },
   {
     id: 9,
@@ -127,25 +136,29 @@ const projects = [
     summary:
       "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     author: "La Fountain",
-    goal: {
-      start: "July 19, 2019",
-      end: "August 17, 2019"
+    links: {
+      github: "github",
+      deployed: "deployed",
+      youtube: "youtube"
     },
-    image: assets
+    image: assets,
+    back: false
     // },
     // {
     //   id: 10,
     //   title: "Casino",
     //   language:
-    //     "React Typescript Javascript Jest Material-UI Sockets Express NodeJs MongoDB Firebase",
+    //     "React Typescript Javascript Material-UI Sockets Express Node MongoDB Firebase",
     //   summary:
     //     "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus nibh.",
     //   author: "La Fountain",
-    //   goal: {
-    //     start: "Sept 1, 2019",
-    //     end: "in progess"
-    //   },
-    //   image: "casino"
+    //   links: {
+    //     github: "github",
+    //   deployed: "deployed",
+    //   youtube: "youtube"
+    // },
+    //   image: "casino",
+    // back: false
   }
 ];
 
