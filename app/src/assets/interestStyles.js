@@ -2,7 +2,9 @@ const interestStyles = {
   container: {
     margin: "auto",
     padding: "5rem",
-    height: "20rem"
+    height: "28rem",
+    boxShadow: "inset 0 0 10px #000000",
+    marginTop: "2rem"
   },
   paragraph: {
     fontSize: "1rem",
@@ -17,6 +19,12 @@ const interestStyles = {
     color: "white",
     fontSize: "1rem",
     textAlign: "center"
+  },
+  head: {
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+    marginBottom: "1rem"
   }
 };
 

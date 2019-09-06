@@ -1,13 +1,20 @@
 import React from "react";
-import { Grid, ListItem, List, makeStyles } from "@material-ui/core";
+import {
+  Grid,
+  ListItem,
+  List,
+  makeStyles,
+  Typography
+} from "@material-ui/core";
 import education from "../../utils/education";
 
 const useStyles = makeStyles({
   item: {
     margin: "auto",
     padding: "5rem",
-    height: "20rem",
-    width: "80rem"
+    height: "25rem",
+    width: "80rem",
+    boxShadow: "inset 0 0 10px #000000"
   },
   header: {
     display: "flex",
@@ -29,6 +36,12 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
     fontSize: "1.2rem",
     color: "white"
+  },
+  head: {
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+    marginBottom: "1rem"
   }
 });
 
@@ -36,6 +49,9 @@ const Education = props => {
   const classes = useStyles();
   return (
     <Grid item md={8} className={classes.item}>
+      <Typography variant="h4" className={classes.head}>
+        Education
+      </Typography>
       <List className={classes.list}>
         {education.map((school, idx) => (
           <React.Fragment key={idx}>

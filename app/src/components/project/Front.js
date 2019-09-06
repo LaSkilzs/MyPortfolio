@@ -9,10 +9,20 @@ const Front = props => {
   return (
     <React.Fragment>
       <Grid item md={4} key={project.id}>
-        <img src={project.image} alt="projects" className={classes.img} />
-        <p onClick={() => props.handleImage(project.id)} className={classes.p}>
-          {project.title}
-        </p>
+        <div className={classes.div}>
+          <img
+            onClick={() => props.handleImage(project.id)}
+            src={project.image}
+            alt="projects"
+            className={classes.img}
+          />
+          <p
+            onClick={() => props.handleTitle(project.id)}
+            className={classes.p}
+          >
+            {project.title}
+          </p>
+        </div>
       </Grid>
     </React.Fragment>
   );

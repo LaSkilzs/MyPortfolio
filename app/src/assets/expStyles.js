@@ -1,8 +1,10 @@
 const expStyles = {
   item: {
+    marginTop: "1rem",
     width: "70rem",
     padding: "5rem",
-    height: "30rem"
+    height: "35rem",
+    boxShadow: "inset 0 0 10px #000000"
   },
   list: {
     fontSize: "1.2rem",
@@ -32,8 +34,12 @@ const expStyles = {
     justifyContent: "space-around",
     margin: "0.5rem"
   },
-  response: {
-    marginTop: "2rem"
+  head2: {
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+    marginBottom: "0.2rem",
+    margin: "0 auto"
   }
 };
 

@@ -3,7 +3,7 @@ import routes from "./Routes";
 import SideNav from "./components/SideNav";
 import { Route, Switch } from "react-router-dom";
 
-const App = () => {
+const App = props => {
   return (
     <React.Fragment>
       <SideNav />

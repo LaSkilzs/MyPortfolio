@@ -4,16 +4,20 @@ import { makeStyles, Button } from "@material-ui/core";
 const useStyles = makeStyles({
   root: {
     display: "flex",
-    justifyContent: "center",
-    marginTop: "1rem"
+    justifyContent: "center"
   },
   btn: {
     padding: "1rem",
     margin: "1rem",
     border: " 3px white solid",
-    width: "10vw",
+    width: "15vw",
     color: "white",
-    fontSize: ".8rem"
+    fontWeight: "bold",
+    fontSize: "1rem",
+    "&:hover": {
+      background: "#7163b2",
+      color: "white"
+    }
   }
 });
 
