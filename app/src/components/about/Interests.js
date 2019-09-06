@@ -45,8 +45,16 @@ class Interests extends Component {
             <List className={classes.list}>
               {this.hobbyList().map(interest => (
                 <Grid item md={2} key={interest.id}>
-                  <ListItem>{interest.icon}</ListItem>
-                  <ListItem>{interest.name}</ListItem>
+                  <ListItem
+                    style={{
+                      fontSize: "1.5rem"
+                    }}
+                  >
+                    {interest.icon}
+                  </ListItem>
+                  <ListItem style={{ color: "white", fontSize: "1rem" }}>
+                    {interest.name}
+                  </ListItem>
                 </Grid>
               ))}
             </List>

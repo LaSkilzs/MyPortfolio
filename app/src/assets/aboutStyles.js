@@ -12,7 +12,6 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     width: "90vw",
-    marginLeft: "5rem",
     height: "10vh",
     padding: "2rem",
     margin: "auto"
@@ -25,8 +24,7 @@ const styles = {
   p: {
     margin: "0 auto",
     color: "white",
-    fontSize: "1.5rem",
-    marginLeft: "5rem"
+    fontSize: "1.5rem"
   },
   contact: {
     display: "flex",
@@ -42,6 +40,11 @@ const styles = {
     fontSize: "1rem",
     textAlign: "center",
     margin: "0.5rem"
+  },
+  div: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
   }
 };
 

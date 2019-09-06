@@ -9,6 +9,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { languageIncluded } from "../utils/functions";
 import Front from "../components/project/Front";
 import Back from "../components/project/Back";
+import ProjectModal from "../components/ProjectModal";
 
 class Portfolio extends React.Component {
   constructor(props) {
@@ -44,7 +45,12 @@ class Portfolio extends React.Component {
     return this.state.projects.map((project, idx) => {
       if (project.back)
         return (
-          <Back key={idx} handleImage={this.handleImage} project={project} />
+          <ProjectModal
+            key={idx}
+            handleImage={this.handleImage}
+            project={project}
+          />
+          // <Back key={idx} handleImage={this.handleImage} project={project} />
         );
       else
         return (
@@ -58,7 +64,7 @@ class Portfolio extends React.Component {
 
     return (
       <Paper className={classes.paper}>
-        <Header name={"Portfolio"} />
+        <Header name={"Projects"} />
         <BtnGroup names={projBtns} handleClick={this.handleClick} />
         <Grid container className={classes.grid}>
           {this.filtered()}

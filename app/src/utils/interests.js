@@ -15,8 +15,8 @@ const interests = [
   },
   {
     id: 3,
-    icon: <i className="fab fa-bitcoin" />,
-    name: "System Engineer",
+    icon: <i class="fab fa-connectdevelop" />,
+    name: "System",
     type: "interest"
   },
   {

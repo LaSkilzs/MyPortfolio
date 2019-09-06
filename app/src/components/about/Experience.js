@@ -73,7 +73,7 @@ class Experience extends React.Component {
               </ListItem>
             </Grid>
 
-            <Grid item md={12}>
+            <Grid item md={8}>
               <ListItem>
                 <MobileStepper
                   steps={5}

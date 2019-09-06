@@ -8,6 +8,7 @@ const useStyles = makeStyles({
   header: {
     color: "white",
     marginTop: "1rem",
+    marginBottom: "1rem",
     fontFamily: "Slabo 27px serif",
     fontWeight: "bold",
     textShadow:
