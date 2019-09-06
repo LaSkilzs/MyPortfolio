@@ -29,7 +29,9 @@ const FootDash = props => {
         </div>
       </Grid>
       <Grid item md={8}>
-        <BtnGroup names={aboutBtns} handleClick={props.handleClick} />
+        <div className={classes.links} style={{ marginTop: "3rem" }}>
+          <BtnGroup names={aboutBtns} handleClick={props.handleClick} />
+        </div>
       </Grid>
     </React.Fragment>
   );

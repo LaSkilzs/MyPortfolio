@@ -2,7 +2,7 @@ const styles = {
   paper: {
     margin: 0,
     marginLeft: "90px",
-    height: "57rem",
+    height: "60rem",
     backgroundImage: `url("https://images.pexels.com/photos/971360/pexels-photo-971360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=800&w=1260")`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
@@ -11,21 +11,22 @@ const styles = {
   grid: {
     display: "flex",
     justifyContent: "center",
-    width: "80vw",
+    width: "90vw",
     marginLeft: "5rem",
     height: "10vh",
-    padding: "2rem"
+    padding: "2rem",
+    margin: "auto"
   },
   img: {
-    width: "24vw",
-    height: "20vh",
+    width: "16vw",
+    height: "16vh",
     padding: "0.5rem"
   },
   p: {
     margin: "0 auto",
     color: "white",
     fontSize: "1.5rem",
-    textAlign: "center"
+    marginLeft: "5rem"
   },
   contact: {
     display: "flex",

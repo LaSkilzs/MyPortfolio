@@ -9,7 +9,8 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 400,
     flexGrow: 1,
-    marginLeft: "10rem"
+    marginLeft: "10rem",
+    background: "transparent"
   }
 });
 
@@ -36,7 +37,12 @@ export default function DotsMobileStepper(props) {
       activeStep={activeStep}
       className={classes.root}
       nextButton={
-        <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
+        <Button
+          size="small"
+          onClick={handleNext}
+          disabled={activeStep === 5}
+          style={{ color: "white" }}
+        >
           Next
           {theme.direction === "rtl" ? (
             <KeyboardArrowLeft />
@@ -46,7 +52,12 @@ export default function DotsMobileStepper(props) {
         </Button>
       }
       backButton={
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+        <Button
+          size="small"
+          onClick={handleBack}
+          disabled={activeStep === 0}
+          style={{ color: "white" }}
+        >
           {theme.direction === "rtl" ? (
             <KeyboardArrowRight />
           ) : (

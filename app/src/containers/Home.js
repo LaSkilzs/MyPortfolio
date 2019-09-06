@@ -4,8 +4,8 @@ import { Paper, makeStyles } from "@material-ui/core";
 const useStyles = makeStyles({
   paper: {
     margin: 0,
-    height: "105vh",
-    width: "105vw",
+    height: "100vh",
+    width: "100vw",
     backgroundImage: `url(https://cdn.pixabay.com/photo/2019/05/22/20/38/lavender-4222480_1280.jpg)`,
     backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",

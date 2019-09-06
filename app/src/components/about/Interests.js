@@ -32,7 +32,9 @@ class Interests extends Component {
       <Grid item md={8} className={classes.container}>
         {this.state.showHobby ? (
           <React.Fragment>
-            <Typography variant="h4">Hobbies</Typography>
+            <Typography variant="h4" className={classes.head}>
+              Hobbies
+            </Typography>
             <Typography className={classes.paragraph}>
               I like to consider myself very diverse in my hobbies. I am avivd
               sports enthusiam, having recieve a full athletic scholarship, and
@@ -51,7 +53,9 @@ class Interests extends Component {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <Typography variant="h4">Interests</Typography>
+            <Typography variant="h4" className={classes.head}>
+              Interests
+            </Typography>
             <Typography className={classes.paragraph}>
               Techncially, I am interested in how things are connected that is
               one of the reasons, I chose full stack development. Understanding
@@ -62,8 +66,12 @@ class Interests extends Component {
             <List className={classes.list}>
               {this.interestList().map(interest => (
                 <Grid item md={2} key={interest.id}>
-                  <ListItem>{interest.icon}</ListItem>
-                  <ListItem>{interest.name}</ListItem>
+                  <ListItem style={{ fontSize: "1.5rem" }}>
+                    {interest.icon}
+                  </ListItem>
+                  <ListItem style={{ color: "white", fontSize: "1rem" }}>
+                    {interest.name}
+                  </ListItem>
                 </Grid>
               ))}
             </List>

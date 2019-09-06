@@ -15,7 +15,6 @@ class Experience extends React.Component {
   }
 
   handleRight = () => {
-    console.log("right", this.state.start);
     if (this.state.start < this.state.experience.length - 1) {
       this.setState({ start: this.state.start + 1 });
     } else {
@@ -41,6 +40,9 @@ class Experience extends React.Component {
 
     return (
       <Grid item md={8} className={classes.item}>
+        <Typography variant="h4" className={classes.head2}>
+          Work Experience
+        </Typography>
         <List className={classes.list}>
           <React.Fragment>
             <Grid item md={8} className={classes.head}>
